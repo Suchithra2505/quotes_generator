@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background: #bbc6fa;
+}
+
+.quotebox {
+    background: #a9f0a9;
+    width: 80%; /* Adjusted width for responsiveness */
+    max-width: 400px; /* Added maximum width to avoid excessive width on larger screens */
+    margin: 50px auto; /* Centered the quotebox */
+    padding: 20px;
+    text-align: center;
+    border-radius: 11px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+.quotebox:hover {
+    transform: scale(1.05); /* Scale up on hover */
+}
+
+h2 {
+    font-size: medium;
+    margin-bottom: 20px; /* Reduced margin for smaller screens */
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    width: 50px; /* Adjusted width for smaller screens */
+    height: 3px; /* Adjusted height for smaller screens */
+    background: rgb(205, 50, 71);
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+blockquote {
+    font-size: medium;
+    min-height: 100px; /* Adjusted min-height for smaller screens */
+    transition: opacity 0.5s ease-in-out;
+}
+
+blockquote::before,
+blockquote::after {
+    content: '"';
+}
+
+span {
+    display: block;
+    position: relative;
+    margin-top: 10px;
+}
+
+span::before {
+    content: '';
+    width: 15px; /* Adjusted width for smaller screens */
+    height: 2px; /* Adjusted height for smaller screens */
+    position: absolute;
+    background: #92a2de;
+    top: 50%;
+    left: -20px;
+}
+
+#d1 {
+    width: 100%;
+    margin-top: 20px; /* Reduced margin for smaller screens */
+    display: flex;
+    flex-direction: column; /* Adjusted to a column layout for smaller screens */
+    gap: 10px;
+}
+
+button {
+    background: #de92a8;
+    color: aliceblue;
+    border-radius: 20px;
+    height: 50px;
+    width: 100%; /* Adjusted width for responsiveness */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(205, 50, 71);
+    gap: 10px;
+    transition: background 0.3s ease-in-out;
+}
+button:hover {
+    background: #d2748e; /* Change background color on hover */
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (min-width: 600px) {
+    .quotebox {
+        width: 60%; /* Adjusted width for medium-sized screens */
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .quotebox {
+        width: 40%; /* Adjusted width for larger screens */
+    }
+}
